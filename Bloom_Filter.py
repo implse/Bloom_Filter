@@ -14,12 +14,12 @@ class BloomFilter:
 
     def add(self, value):
         for f in self.hashes:
-            v = h(value)
+            v = f(value)
             self.array[v] = True
 
     def check(self, value):
-        for h in self.hashes:
-            v == h(value)
+        for f in self.hashes:
+            v = f(value)
             if not self.array[v]:
                 return False
         return True
@@ -27,7 +27,9 @@ class BloomFilter:
 # Test
 bloom = BloomFilter()
 passwords = ["123456", "password", "12345678", "qwerty", "123456789", "12345", "1234", "111111", "1234567", "dragon"]
+
 for p in passwords:
     bloom.add(p)
 
-bloom.check("dragon")
+print(bloom.check("dragon"))
+print(bloom.check("sha"))
