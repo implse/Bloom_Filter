@@ -17,6 +17,12 @@ More space means fewer `False positive`.
 
 The base data structure of a `Bloom filter` is a `Bit Vector`.
 
+Useful in cases:
+
+- the data to be searched is large.
+
+- the memory available on the system is limited/ low.
+
 #### Strengths
   - Space efficient : `Bloom Filter` takes `O(1)` space, regardless of the number of elements inserted. (Accuracy goes down as more elements are added)
 
@@ -26,3 +32,13 @@ The base data structure of a `Bloom filter` is a `Bit Vector`.
   - Probabilistic : `Bloom Filter` can only definitively identify True negative, they cannot identify True positives. (False positive or True positive)
 
   - Limited Interface : `Bloom Filter` only support the insert and lookup operations. You can't iterate through the items in the set or delete items.
+
+
+#### Applications
+
+- Weak password detection
+- Internet Cache Protocol
+- Safe browsing in Google Chrome
+- Wallet synchronization in Bitcoin
+- Hash based IP Traceback
+- Cyber security like virus scanning
